@@ -118,6 +118,28 @@ li + li {
   color: #475467;
 }
 
+.bar-row {
+  display: grid;
+  grid-template-columns: 1.7fr 2.3fr auto;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+  font-size: 0.87rem;
+}
+
+.bar-track {
+  height: 8px;
+  background: #e4e7ec;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2f6fed 0%, #5a8fff 100%);
+  border-radius: 999px;
+}
+
 .recommendations {
   background: #fcfcfd;
 }
@@ -183,5 +205,10 @@ th {
 
   .kpi-value {
     font-size: 1.1rem;
+  }
+
+  .bar-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 }
