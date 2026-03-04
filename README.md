@@ -14,3 +14,19 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Figma token
+
+Create a local env file and add your token:
+
+```bash
+cp .env.example .env.local
+```
+
+Then set:
+
+```bash
+FIGMA_ACCESS_TOKEN=your_figma_personal_access_token
+```
+
+Important: `.env.local` is gitignored, keep the real token only there.
