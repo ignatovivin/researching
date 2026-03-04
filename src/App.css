@@ -5,12 +5,11 @@
   --fg-default: #2c2e2b;
   --fg-muted: #8996a8;
   --border-muted: #7c8a9e26;
-  --accent-soft: #679aea;
+  --accent-soft: #69a6f1;
   --accent-deep: #3e7dd8;
   --accent-on-accent: #ffffff;
   --radius-xl: 32px;
   --radius-md: 16px;
-  --radius-sm: 12px;
 }
 
 #root {
@@ -33,14 +32,14 @@
   background: linear-gradient(124deg, #3e7dd8 0%, var(--accent-soft) 100%);
 }
 
-h1,
-h2,
-h3,
-p {
+.page h1,
+.page h2,
+.page h3,
+.page p {
   margin: 0;
 }
 
-h1 {
+.hero-title {
   color: var(--accent-on-accent);
   font-size: 32px;
   line-height: 44px;
@@ -72,11 +71,16 @@ h1 {
   gap: 12px;
 }
 
+.kpi-main {
+  display: grid;
+  gap: 4px;
+}
+
 .kpi-label {
   color: var(--fg-muted);
   font-size: 14px;
   line-height: 20px;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .kpi-value {
@@ -85,14 +89,14 @@ h1 {
   gap: 4px;
   font-size: 32px;
   line-height: 44px;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .kpi-unit {
   font-size: 14px;
   line-height: 20px;
   color: var(--fg-muted);
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
@@ -100,27 +104,49 @@ h1 {
   color: var(--fg-default);
   font-size: 14px;
   line-height: 20px;
-  font-weight: 400;
+  font-weight: 600;
 }
 
-.section-title {
-  border-radius: var(--radius-xl);
-  background: var(--surface);
-  padding: 32px 24px;
-}
-
-h2 {
+.section-title-text {
   font-size: 28px;
   line-height: 32px;
   font-weight: 400;
   color: var(--fg-default);
 }
 
-h3 {
-  font-size: 20px;
+.block-title {
+  font-size: 24px;
   line-height: 26px;
   font-weight: 400;
   color: var(--fg-default);
+}
+
+.market-section-title {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 500;
+}
+
+.market-content-title {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
+}
+
+.structural-heading {
+  display: grid;
+  gap: 8px;
+}
+
+.structural-section-title {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 500;
+}
+
+.structural-subheading {
+  display: grid;
+  gap: 8px;
 }
 
 .content-grid {
@@ -137,66 +163,76 @@ h3 {
   gap: 24px;
 }
 
-.panel-side {
-  align-content: start;
-  gap: 24px;
+.section-panel {
+  gap: 32px;
 }
 
-.insight-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.jtbd-section {
+  gap: 16px;
+}
+
+.section-body {
   display: grid;
   gap: 24px;
 }
 
-.insight-list li {
+.jtbd-body {
+  gap: 16px;
+}
+
+.panel-side {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+}
+
+.summary-card {
+  background: rgba(124, 138, 158, 0.03);
+  border: 1px solid rgba(124, 138, 158, 0.15);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.note-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 4px;
+}
+
+.note-list li {
   color: var(--fg-default);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.jtbd-title {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
+  color: var(--fg-default);
+}
+
+.body-text {
+  color: var(--fg-default);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.body-strong {
+  color: var(--fg-default);
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
 }
 
 .insight-title {
   color: var(--fg-muted);
   font-size: 14px;
   line-height: 20px;
-  font-weight: 400;
-}
-
-.insight-value {
-  margin-top: 4px;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-}
-
-.focus-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
-}
-
-.focus-card {
-  background: var(--surface);
-  border-radius: var(--radius-xl);
-  padding: 24px;
-  min-height: 168px;
-}
-
-.focus-card p {
-  margin: 0;
-}
-
-.focus-title {
-  color: var(--fg-muted);
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 400;
-}
-
-.focus-value {
-  margin-top: 4px;
-  color: var(--fg-default);
-  font-size: 16px;
-  line-height: 24px;
   font-weight: 400;
 }
 
@@ -210,8 +246,22 @@ h3 {
   padding-top: 24px;
 }
 
-.table-panel .panel-block + .panel-block {
-  padding-top: 25px;
+.pressure-card {
+  display: grid;
+  gap: 8px;
+  padding: 24px;
+  background: rgba(124, 138, 158, 0.03);
+  border: 1px solid rgba(124, 138, 158, 0.15);
+  border-radius: var(--radius-md);
+}
+
+.jtbd-card {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+  background: rgba(124, 138, 158, 0.03);
+  border: 1px solid rgba(124, 138, 158, 0.15);
+  border-radius: var(--radius-md);
 }
 
 .table-wrap {
@@ -278,42 +328,12 @@ th:first-child {
   width: 8.166%;
 }
 
-.table-segment .col-two-left,
 .table-digital .col-two-left {
   width: 28.8%;
 }
 
-.table-segment .col-two-right,
 .table-digital .col-two-right {
   width: 71.2%;
-}
-
-.table-scenarios .col-scenario-1 {
-  width: 21.45%;
-}
-
-.table-scenarios .col-scenario-2 {
-  width: 39.27%;
-}
-
-.table-scenarios .col-scenario-3 {
-  width: 39.28%;
-}
-
-.table-compare .col-compare-1 {
-  width: 21.45%;
-}
-
-.table-compare .col-compare-2 {
-  width: 26.18%;
-}
-
-.table-compare .col-compare-3 {
-  width: 26.18%;
-}
-
-.table-compare .col-compare-4 {
-  width: 26.19%;
 }
 
 .note {
@@ -323,8 +343,290 @@ th:first-child {
   font-weight: 400;
 }
 
-.table-panel {
-  gap: 25px;
+.structural-panel .structural-section-title {
+  font-weight: 700;
+}
+
+.structural-panel .block-title {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.structural-panel .note {
+  font-weight: 600;
+}
+
+.structural-panel th {
+  font-weight: 700;
+}
+
+.structural-panel td {
+  font-weight: 600;
+}
+
+.structural-panel .table-structural-subscription th:last-child,
+.structural-panel .table-structural-subscription td:last-child {
+  width: 176px;
+  text-align: right;
+}
+
+.structural-panel .table-structural-online th:last-child,
+.structural-panel .table-structural-online td:last-child {
+  width: 221px;
+  text-align: right;
+}
+
+.structural-panel .note-multiline {
+  display: grid;
+  gap: 0;
+}
+
+.structural-panel .note-multiline p {
+  margin: 0;
+}
+
+.structural-panel .pressure-card {
+  gap: 16px;
+}
+
+.structural-panel .pressure-intro {
+  display: grid;
+  gap: 4px;
+}
+
+.structural-panel .pressure-card .note-list {
+  gap: 0;
+}
+
+.structural-panel .pressure-card .note-list li,
+.structural-panel .pressure-card .body-text {
+  font-weight: 600;
+}
+
+.segmentation-content {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+}
+
+.segmentation-heading {
+  display: grid;
+  gap: 8px;
+}
+
+.segmentation-section-title {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.segmentation-card {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+  background: rgba(124, 138, 158, 0.03);
+  border: 1px solid rgba(124, 138, 158, 0.15);
+  border-radius: 16px;
+}
+
+.segmentation-group {
+  display: grid;
+  gap: 4px;
+}
+
+.segmentation-panel .insight-title,
+.segmentation-panel .note,
+.segmentation-panel td,
+.segmentation-panel .body-text,
+.segmentation-panel .note-list li {
+  font-weight: 600;
+}
+
+.segmentation-panel th {
+  font-weight: 700;
+}
+
+.table-segmentation .col-seg-main {
+  width: 248px;
+}
+
+.table-segmentation .col-seg-other {
+  width: auto;
+}
+
+.segmentation-card .note-list {
+  gap: 0;
+}
+
+.jtbd-section-title {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.jtbd-panel .jtbd-title {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.jtbd-panel .insight-title,
+.jtbd-panel .body-text,
+.jtbd-panel .note-list li {
+  font-weight: 600;
+}
+
+.jtbd-panel .note-list {
+  gap: 0;
+}
+
+.jtbd-panel .jtbd-pair {
+  display: grid;
+  gap: 4px;
+}
+
+.alternatives-content {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+}
+
+.alternatives-heading {
+  display: grid;
+  gap: 8px;
+}
+
+.alternatives-section-title {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.alternatives-panel .note {
+  font-weight: 600;
+}
+
+.alternatives-panel th {
+  font-weight: 700;
+}
+
+.applicability-content {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+}
+
+.applicability-section-title {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.applicability-panel th {
+  font-weight: 700;
+}
+
+.table-applicability .col-app-main,
+.table-applicability .col-app-mid {
+  width: auto;
+}
+
+.table-applicability .col-app-last {
+  width: 400px;
+}
+
+.monetization-content {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+}
+
+.monetization-heading {
+  display: grid;
+  gap: 8px;
+}
+
+.monetization-section-title {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.monetization-panel .note {
+  font-weight: 600;
+}
+
+.monetization-card {
+  display: grid;
+  gap: 24px;
+  padding: 24px;
+  background: rgba(124, 138, 158, 0.03);
+  border: 1px solid rgba(124, 138, 158, 0.15);
+  border-radius: 16px;
+}
+
+.monetization-block {
+  display: grid;
+  gap: 16px;
+}
+
+.monetization-pair {
+  display: grid;
+  gap: 4px;
+}
+
+.monetization-divider {
+  height: 1px;
+  background: var(--border-muted);
+}
+
+.monetization-panel .insight-title,
+.monetization-panel .body-text,
+.monetization-panel .note-list li {
+  font-weight: 600;
+}
+
+.monetization-list {
+  gap: 0;
+}
+
+.discovery-content {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+}
+
+.discovery-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.discovery-section-title {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.discovery-card-body {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  height: 100%;
+}
+
+.discovery-pair {
+  display: grid;
+  gap: 4px;
+}
+
+.discovery-panel .insight-title,
+.discovery-panel .body-text,
+.discovery-panel .note-list li {
+  font-weight: 600;
+}
+
+.discovery-panel .note-list {
+  gap: 0;
 }
 
 @media (max-width: 1200px) {
@@ -332,24 +634,41 @@ th:first-child {
     --radius-xl: 24px;
   }
 
-  h1 {
+  .hero-title {
     font-size: 30px;
     line-height: 40px;
   }
 
-  h2 {
+  .section-title-text {
     font-size: 26px;
     line-height: 30px;
   }
 
-  h3 {
-    font-size: 19px;
+  .block-title {
+    font-size: 22px;
     line-height: 24px;
   }
 
+  .market-section-title {
+    font-size: 24px;
+    line-height: 26px;
+  }
+
+  .market-content-title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .structural-section-title {
+    font-size: 24px;
+    line-height: 26px;
+  }
+
   .subtitle,
-  .insight-value,
-  .focus-value,
+  .body-text,
+  .body-strong,
+  .jtbd-title,
+  .note-list li,
   th,
   td {
     font-size: 15px;
@@ -373,12 +692,21 @@ th:first-child {
     padding: 28px 20px;
   }
 
-  .section-title {
-    padding: 24px 20px;
-  }
-
   .panel {
     padding: 24px 20px;
+    gap: 20px;
+  }
+
+  .section-panel {
+    gap: 24px;
+  }
+
+  .jtbd-section,
+  .jtbd-body {
+    gap: 16px;
+  }
+
+  .section-body {
     gap: 20px;
   }
 
@@ -390,18 +718,9 @@ th:first-child {
     padding-top: 20px;
   }
 
-  .table-panel .panel-block + .panel-block {
-    padding-top: 21px;
-  }
-
-  .kpi-card,
-  .focus-card {
+  .kpi-card {
     padding: 20px;
     min-height: 152px;
-  }
-
-  .insight-list {
-    gap: 20px;
   }
 
   th,
@@ -409,8 +728,7 @@ th:first-child {
     padding: 9px 14px;
   }
 
-  .kpi-grid,
-  .focus-grid {
+  .kpi-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -424,24 +742,41 @@ th:first-child {
     --radius-xl: 18px;
   }
 
-  h1 {
+  .hero-title {
     font-size: 24px;
     line-height: 32px;
   }
 
-  h2 {
+  .section-title-text {
     font-size: 22px;
     line-height: 28px;
   }
 
-  h3 {
-    font-size: 17px;
+  .block-title {
+    font-size: 20px;
     line-height: 22px;
   }
 
+  .market-section-title {
+    font-size: 22px;
+    line-height: 24px;
+  }
+
+  .market-content-title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .structural-section-title {
+    font-size: 22px;
+    line-height: 24px;
+  }
+
   .subtitle,
-  .insight-value,
-  .focus-value {
+  .body-text,
+  .body-strong,
+  .jtbd-title,
+  .note-list li {
     font-size: 14px;
     line-height: 20px;
   }
@@ -455,7 +790,6 @@ th:first-child {
   .kpi-note,
   .kpi-unit,
   .insight-title,
-  .focus-title,
   .note {
     font-size: 13px;
     line-height: 18px;
@@ -463,16 +797,23 @@ th:first-child {
 
   .hero,
   .panel,
-  .kpi-card,
-  .focus-card,
-  .section-title {
+  .kpi-card {
     border-radius: var(--radius-xl);
     padding: 16px 14px;
   }
 
   .panel,
-  .panel-side,
-  .table-panel {
+  .section-body,
+  .panel-side {
+    gap: 14px;
+  }
+
+  .pressure-card {
+    padding: 20px;
+  }
+
+  .jtbd-card {
+    padding: 20px;
     gap: 14px;
   }
 
@@ -484,16 +825,8 @@ th:first-child {
     padding-top: 16px;
   }
 
-  .table-panel .panel-block + .panel-block {
-    padding-top: 17px;
-  }
-
   .kpi-card {
     min-height: auto;
-  }
-
-  .insight-list {
-    gap: 16px;
   }
 
   th,
@@ -507,8 +840,7 @@ th:first-child {
     --radius-xl: 14px;
   }
 
-  .kpi-grid,
-  .focus-grid {
+  .kpi-grid {
     grid-template-columns: 1fr;
   }
 
@@ -524,17 +856,25 @@ th:first-child {
     padding: 14px 12px;
   }
 
-  .section-title,
   .panel,
   .kpi-card,
-  .focus-card {
+  .summary-card {
     padding: 12px 10px;
     border-radius: var(--radius-xl);
   }
 
   .panel,
-  .panel-side,
-  .table-panel {
+  .section-body,
+  .panel-side {
+    gap: 10px;
+  }
+
+  .pressure-card {
+    padding: 12px 10px;
+  }
+
+  .jtbd-card {
+    padding: 12px 10px;
     gap: 10px;
   }
 
@@ -546,28 +886,39 @@ th:first-child {
     padding-top: 12px;
   }
 
-  .table-panel .panel-block + .panel-block {
-    padding-top: 13px;
-  }
-
   .subtitle {
     font-size: 13px;
     line-height: 18px;
   }
 
-  h1 {
+  .hero-title {
     font-size: 20px;
     line-height: 28px;
   }
 
-  h2 {
+  .section-title-text {
     font-size: 19px;
     line-height: 24px;
   }
 
-  h3 {
-    font-size: 16px;
+  .block-title {
+    font-size: 18px;
     line-height: 20px;
+  }
+
+  .market-section-title {
+    font-size: 19px;
+    line-height: 24px;
+  }
+
+  .market-content-title {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .structural-section-title {
+    font-size: 19px;
+    line-height: 24px;
   }
 
   .kpi-value {
@@ -579,9 +930,6 @@ th:first-child {
   .kpi-note,
   .kpi-unit,
   .insight-title,
-  .insight-value,
-  .focus-title,
-  .focus-value,
   .note {
     font-size: 12px;
     line-height: 16px;
