@@ -14,12 +14,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@supports (-webkit-touch-callout: none) {
-  :root {
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', sans-serif;
-  }
-}
-
 *,
 *::before,
 *::after {
