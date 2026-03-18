@@ -26,10 +26,82 @@
   color: var(--fg-default);
 }
 
+.tab-shell {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding-top: 4px;
+  background: linear-gradient(180deg, rgba(246, 246, 246, 0.98), rgba(246, 246, 246, 0.86));
+  backdrop-filter: blur(10px);
+}
+
+.tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--border-muted);
+  border-radius: 999px;
+}
+
+.tab-button {
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--fg-default);
+  padding: 12px 18px;
+  font: inherit;
+  font-size: 15px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.tab-button:hover {
+  background: rgba(62, 125, 216, 0.08);
+}
+
+.tab-button.is-active {
+  background: linear-gradient(124deg, #3e7dd8 0%, var(--accent-soft) 100%);
+  color: var(--accent-on-accent);
+  box-shadow: 0 10px 24px rgba(62, 125, 216, 0.18);
+}
+
 .hero {
   border-radius: var(--radius-xl);
   padding: 32px 24px;
   background: linear-gradient(124deg, #3e7dd8 0%, var(--accent-soft) 100%);
+}
+
+.medicine-hero {
+  padding: 32px 24px;
+  border-radius: 32px;
+  background:
+    linear-gradient(130.846deg, rgb(62, 125, 216) 4.4078%, rgb(105, 166, 241) 100.67%),
+    linear-gradient(90deg, rgb(103, 154, 234) 0%, rgb(103, 154, 234) 100%);
+}
+
+.medicine-hero-content {
+  display: grid;
+  gap: 12px;
+}
+
+.medicine-hero-title {
+  width: 100%;
+  color: var(--accent-on-accent);
+  font-size: 32px;
+  line-height: 44px;
+  font-weight: 700;
+}
+
+.medicine-hero-subtitle {
+  width: 100%;
+  max-width: none;
+  color: var(--bg-page);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
 }
 
 .page h1,
@@ -105,6 +177,46 @@
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
+}
+
+.medicine-stats-grid {
+  gap: 8px;
+}
+
+.medicine-stat-card {
+  min-height: 144px;
+  gap: 12px;
+  border-radius: 32px;
+}
+
+.medicine-stat-label {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.medicine-stat-value {
+  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 4px;
+  font-size: 32px;
+  line-height: 44px;
+  font-weight: 700;
+}
+
+.medicine-stat-unit {
+  margin-bottom: 7px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  color: var(--fg-muted);
+}
+
+.medicine-stat-note {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
 }
 
 .section-title-text {
@@ -629,6 +741,447 @@ th:first-child {
   gap: 0;
 }
 
+.medicine-panel {
+  gap: 20px;
+}
+
+.medicine-heading {
+  display: grid;
+  gap: 8px;
+}
+
+.medicine-market-panel {
+  gap: 16px;
+}
+
+.medicine-market-title {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.medicine-market-panel .note {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.medicine-market-panel .table-wrap {
+  border-radius: 8px;
+}
+
+.medicine-market-panel .data-table {
+  border-color: rgba(124, 138, 158, 0.18);
+}
+
+.medicine-market-panel th,
+.medicine-market-panel td {
+  padding: 12px 12px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.medicine-market-panel th {
+  font-weight: 600;
+}
+
+.medicine-logic-card {
+  display: grid;
+  gap: 4px;
+  border-radius: 16px;
+}
+
+.medicine-logic-label {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.medicine-logic-text {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.medicine-audience-panel {
+  gap: 24px;
+}
+
+.medicine-audience-subtitle {
+  margin: 0;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  color: var(--fg-default);
+}
+
+.medicine-audience-panel .table-wrap {
+  border-radius: 8px;
+}
+
+.medicine-audience-panel .data-table {
+  border-color: rgba(124, 138, 158, 0.15);
+}
+
+.medicine-audience-panel th,
+.medicine-audience-panel td {
+  padding: 10px 16px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.medicine-audience-panel th {
+  font-weight: 700;
+}
+
+.medicine-audience-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.medicine-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border-muted);
+}
+
+.medicine-audience-detail-card {
+  display: grid;
+  gap: 4px;
+  min-height: 144px;
+  padding: 24px;
+  border-radius: 16px;
+}
+
+.medicine-audience-detail-label {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.medicine-audience-detail-text {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.medicine-problem-panel {
+  gap: 24px;
+}
+
+.medicine-problem-panel .data-table {
+  border-color: rgba(124, 138, 158, 0.15);
+}
+
+.medicine-problem-panel th,
+.medicine-problem-panel td {
+  padding: 10px 16px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.medicine-problem-panel th {
+  font-weight: 700;
+}
+
+.medicine-problem-panel th:first-child,
+.medicine-problem-panel td:first-child {
+  width: 51px;
+}
+
+.medicine-problem-card-stack {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+}
+
+.medicine-problem-card {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  border-radius: 16px;
+}
+
+.medicine-problem-card-title {
+  margin: 0;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  color: var(--fg-default);
+}
+
+.medicine-problem-card-text {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.medicine-value-panel {
+  gap: 16px;
+}
+
+.medicine-value-panel .note {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.medicine-value-panel .data-table {
+  border-color: rgba(124, 138, 158, 0.15);
+}
+
+.medicine-value-panel th,
+.medicine-value-panel td {
+  padding: 10px 16px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.medicine-value-panel th {
+  font-weight: 700;
+}
+
+.medicine-value-panel th:first-child,
+.medicine-value-panel td:first-child {
+  width: 183px;
+}
+
+.medicine-value-card {
+  display: grid;
+  gap: 12px;
+  border-radius: 16px;
+}
+
+.medicine-strategic-panel {
+  gap: 16px;
+}
+
+.medicine-strategic-card {
+  display: grid;
+  gap: 12px;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.medicine-strategic-list {
+  gap: 0;
+}
+
+.medicine-strategic-list li {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.medicine-channel-panel {
+  gap: 16px;
+}
+
+.medicine-channel-panel .data-table {
+  border-color: rgba(124, 138, 158, 0.15);
+}
+
+.medicine-channel-panel th,
+.medicine-channel-panel td {
+  padding: 10px 16px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.medicine-channel-panel th {
+  font-weight: 700;
+}
+
+.medicine-channel-panel td {
+  font-weight: 500;
+}
+
+.medicine-channel-panel th:first-child,
+.medicine-channel-panel td:first-child {
+  width: 368px;
+}
+
+.medicine-monetization-panel {
+  gap: 16px;
+}
+
+.medicine-monetization-panel .data-table {
+  border-color: rgba(124, 138, 158, 0.15);
+}
+
+.medicine-monetization-panel th,
+.medicine-monetization-panel td {
+  padding: 10px 16px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.medicine-monetization-panel th {
+  font-weight: 700;
+}
+
+.medicine-monetization-panel td {
+  font-weight: 500;
+}
+
+.medicine-monetization-panel th:first-child,
+.medicine-monetization-panel td:first-child {
+  width: 561px;
+}
+
+.medicine-arppu-card {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  border-radius: 16px;
+}
+
+.medicine-summary-panel {
+  gap: 24px;
+}
+
+.medicine-summary-panel .data-table {
+  border-color: rgba(124, 138, 158, 0.15);
+}
+
+.medicine-summary-panel th,
+.medicine-summary-panel td {
+  padding: 10px 16px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.medicine-summary-panel th {
+  font-weight: 700;
+}
+
+.medicine-summary-panel td {
+  font-weight: 500;
+}
+
+.medicine-summary-panel th:first-child,
+.medicine-summary-panel td:first-child {
+  width: 51px;
+}
+
+.medicine-summary-card {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  border-radius: 16px;
+}
+
+.medicine-summary-card-text {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.medicine-entry-panel {
+  gap: 16px;
+}
+
+.medicine-entry-title {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.medicine-entry-panel .data-table {
+  border-color: rgba(124, 138, 158, 0.15);
+}
+
+.medicine-entry-panel th,
+.medicine-entry-panel td {
+  padding: 10px 16px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.medicine-entry-panel th {
+  font-weight: 700;
+}
+
+.medicine-entry-panel td {
+  font-weight: 500;
+}
+
+.medicine-entry-panel th:first-child,
+.medicine-entry-panel td:first-child {
+  width: 51px;
+}
+
+.medicine-product-panel {
+  gap: 16px;
+}
+
+.medicine-product-title {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.medicine-product-panel .summary-card {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.medicine-product-panel .body-text {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.medicine-cards-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.medicine-overview-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.medicine-overview-card {
+  background: var(--surface);
+  border-radius: 32px;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.medicine-overview-card-content {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  color: var(--fg-default);
+}
+
+.medicine-overview-card-title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 700;
+  color: var(--fg-default);
+}
+
+.medicine-overview-card-text {
+  display: grid;
+  gap: 0;
+}
+
+.medicine-overview-card-text p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--fg-default);
+}
+
 @media (max-width: 1200px) {
   :root {
     --radius-xl: 24px;
@@ -692,6 +1245,11 @@ th:first-child {
     padding: 28px 20px;
   }
 
+  .medicine-hero {
+    padding: 28px 20px;
+    border-radius: 24px;
+  }
+
   .panel {
     padding: 24px 20px;
     gap: 20px;
@@ -735,6 +1293,63 @@ th:first-child {
   .content-grid {
     grid-template-columns: 1fr;
   }
+
+  .medicine-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .medicine-stat-card {
+    min-height: 136px;
+    border-radius: 24px;
+  }
+
+  .medicine-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .medicine-overview-card {
+    border-radius: 24px;
+  }
+
+  .medicine-market-panel th,
+  .medicine-market-panel td {
+    padding: 10px 12px;
+  }
+
+  .medicine-audience-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .medicine-problem-panel th,
+  .medicine-problem-panel td {
+    padding: 10px 12px;
+  }
+
+  .medicine-value-panel th,
+  .medicine-value-panel td {
+    padding: 10px 12px;
+  }
+
+  .medicine-channel-panel th,
+  .medicine-channel-panel td {
+    padding: 10px 12px;
+  }
+
+  .medicine-monetization-panel th,
+  .medicine-monetization-panel td {
+    padding: 10px 12px;
+  }
+
+  .medicine-summary-panel th,
+  .medicine-summary-panel td {
+    padding: 10px 12px;
+  }
+
+  .medicine-entry-panel th,
+  .medicine-entry-panel td {
+    padding: 10px 12px;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -802,6 +1417,27 @@ th:first-child {
     padding: 16px 14px;
   }
 
+  .medicine-hero {
+    border-radius: var(--radius-xl);
+  }
+
+  .medicine-stat-card {
+    border-radius: var(--radius-xl);
+  }
+
+  .medicine-overview-card {
+    border-radius: var(--radius-xl);
+  }
+
+  .medicine-market-title {
+    font-size: 22px;
+    line-height: 24px;
+  }
+
+  .medicine-audience-detail-card {
+    min-height: auto;
+  }
+
   .panel,
   .section-body,
   .panel-side {
@@ -833,6 +1469,15 @@ th:first-child {
   td {
     padding: 8px 10px;
   }
+
+  .tab-bar {
+    border-radius: 20px;
+  }
+
+  .tab-button {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 @media (max-width: 560px) {
@@ -853,6 +1498,10 @@ th:first-child {
   }
 
   .hero {
+    padding: 14px 12px;
+  }
+
+  .medicine-hero {
     padding: 14px 12px;
   }
 
