@@ -37,22 +37,26 @@
   backdrop-filter: blur(10px);
 }
 
+.tab-scroll {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tab-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 .tab-bar {
   display: flex;
   flex-wrap: nowrap;
   gap: 8px;
   padding: 8px;
-  width: 100%;
-  min-width: 0;
-  overflow-x: auto;
-  scrollbar-width: none;
+  width: max-content;
+  min-width: 100%;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--border-muted);
   border-radius: 32px;
-}
-
-.tab-bar::-webkit-scrollbar {
-  display: none;
 }
 
 .tab-button {
