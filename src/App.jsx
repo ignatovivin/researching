@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 
 const tabs = [
@@ -3090,13 +3090,13 @@ function App() {
   const [activeTab, setActiveTab] = useState('fitness')
   const tabScrollRef = useRef(null)
   const dragStateRef = useRef({
-    pointerId: null,
+    isDragging: false,
     startX: 0,
     startScrollLeft: 0,
     moved: false,
   })
 
-  const handleTabPointerDown = (event) => {
+  const handleTabMouseDown = (event) => {
     if (event.button !== 0) {
       return
     }
@@ -3108,53 +3108,56 @@ function App() {
     }
 
     dragStateRef.current = {
-      pointerId: event.pointerId,
+      isDragging: true,
       startX: event.clientX,
       startScrollLeft: container.scrollLeft,
       moved: false,
     }
-
-    container.setPointerCapture(event.pointerId)
   }
 
-  const handleTabPointerMove = (event) => {
-    const container = tabScrollRef.current
-    const dragState = dragStateRef.current
+  useEffect(() => {
+    const handleMouseMove = (event) => {
+      const container = tabScrollRef.current
+      const dragState = dragStateRef.current
 
-    if (!container || dragState.pointerId !== event.pointerId) {
-      return
+      if (!container || !dragState.isDragging) {
+        return
+      }
+
+      const deltaX = event.clientX - dragState.startX
+
+      if (Math.abs(deltaX) > 4) {
+        dragState.moved = true
+        container.classList.add('is-dragging')
+      }
+
+      container.scrollLeft = dragState.startScrollLeft - deltaX
     }
 
-    const deltaX = event.clientX - dragState.startX
+    const handleMouseUp = () => {
+      const container = tabScrollRef.current
+      const dragState = dragStateRef.current
 
-    if (Math.abs(deltaX) > 4) {
-      dragState.moved = true
-      container.classList.add('is-dragging')
+      if (!container || !dragState.isDragging) {
+        return
+      }
+
+      container.classList.remove('is-dragging')
+      dragState.isDragging = false
+
+      window.setTimeout(() => {
+        dragStateRef.current.moved = false
+      }, 0)
     }
 
-    container.scrollLeft = dragState.startScrollLeft - deltaX
-  }
+    window.addEventListener('mousemove', handleMouseMove)
+    window.addEventListener('mouseup', handleMouseUp)
 
-  const handleTabPointerEnd = (event) => {
-    const container = tabScrollRef.current
-    const dragState = dragStateRef.current
-
-    if (!container || dragState.pointerId !== event.pointerId) {
-      return
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener('mouseup', handleMouseUp)
     }
-
-    container.classList.remove('is-dragging')
-
-    if (container.hasPointerCapture(event.pointerId)) {
-      container.releasePointerCapture(event.pointerId)
-    }
-
-    window.setTimeout(() => {
-      dragStateRef.current.moved = false
-    }, 0)
-
-    dragStateRef.current.pointerId = null
-  }
+  }, [])
 
   const handleTabClick = (tabId) => {
     if (dragStateRef.current.moved) {
@@ -3171,10 +3174,7 @@ function App() {
           <div
             ref={tabScrollRef}
             className="tab-scroll"
-            onPointerDown={handleTabPointerDown}
-            onPointerMove={handleTabPointerMove}
-            onPointerUp={handleTabPointerEnd}
-            onPointerCancel={handleTabPointerEnd}
+            onMouseDown={handleTabMouseDown}
           >
             <div className="tab-bar" role="tablist" aria-label="Разделы сайта">
               {tabs.map((tab) => (
