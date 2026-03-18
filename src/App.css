@@ -121,7 +121,7 @@
   color: var(--accent-on-accent);
   font-size: 32px;
   line-height: 44px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .medicine-hero-subtitle {
@@ -130,7 +130,7 @@
   color: var(--bg-page);
   font-size: 16px;
   line-height: 24px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .page h1,
@@ -153,7 +153,7 @@
   color: var(--accent-on-accent);
   font-size: 16px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .kpi-grid {
@@ -181,7 +181,7 @@
   color: var(--fg-muted);
   font-size: 14px;
   line-height: 20px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .kpi-value {
@@ -205,7 +205,7 @@
   color: var(--fg-default);
   font-size: 14px;
   line-height: 20px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .medicine-stats-grid {
@@ -221,7 +221,7 @@
 .medicine-stat-label {
   font-size: 14px;
   line-height: 20px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .medicine-stat-value {
@@ -251,14 +251,14 @@
 .section-title-text {
   font-size: 28px;
   line-height: 32px;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--fg-default);
 }
 
 .block-title {
   font-size: 24px;
   line-height: 26px;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--fg-default);
 }
 
@@ -346,13 +346,13 @@
   color: var(--fg-default);
   font-size: 16px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .jtbd-title {
   font-size: 20px;
   line-height: 26px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--fg-default);
 }
 
@@ -360,14 +360,14 @@
   color: var(--fg-default);
   font-size: 16px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .body-strong {
   color: var(--fg-default);
   font-size: 20px;
   line-height: 26px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .insight-title {
@@ -481,29 +481,29 @@ th:first-child {
   color: var(--fg-muted);
   font-size: 14px;
   line-height: 20px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .structural-panel .structural-section-title {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .structural-panel .block-title {
   font-size: 20px;
   line-height: 26px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .structural-panel .note {
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .structural-panel th {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .structural-panel td {
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .structural-panel .table-structural-subscription th:last-child,
@@ -542,7 +542,7 @@ th:first-child {
 
 .structural-panel .pressure-card .note-list li,
 .structural-panel .pressure-card .body-text {
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .segmentation-content {
@@ -559,7 +559,7 @@ th:first-child {
 .segmentation-section-title {
   font-size: 24px;
   line-height: 26px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .segmentation-card {
@@ -581,11 +581,15 @@ th:first-child {
 .segmentation-panel td,
 .segmentation-panel .body-text,
 .segmentation-panel .note-list li {
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .segmentation-panel th {
-  font-weight: 700;
+  font-weight: 500;
+}
+
+.segmentation-panel td {
+  font-weight: 400;
 }
 
 .table-segmentation .col-seg-main {
@@ -603,19 +607,19 @@ th:first-child {
 .jtbd-section-title {
   font-size: 24px;
   line-height: 26px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .jtbd-panel .jtbd-title {
   font-size: 18px;
   line-height: 24px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .jtbd-panel .insight-title,
 .jtbd-panel .body-text,
 .jtbd-panel .note-list li {
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .jtbd-panel .note-list {
@@ -641,15 +645,19 @@ th:first-child {
 .alternatives-section-title {
   font-size: 24px;
   line-height: 26px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .alternatives-panel .note {
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .alternatives-panel th {
-  font-weight: 700;
+  font-weight: 500;
+}
+
+.alternatives-panel td {
+  font-weight: 400;
 }
 
 .applicability-content {
@@ -661,11 +669,15 @@ th:first-child {
 .applicability-section-title {
   font-size: 24px;
   line-height: 26px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .applicability-panel th {
-  font-weight: 700;
+  font-weight: 500;
+}
+
+.applicability-panel td {
+  font-weight: 400;
 }
 
 .table-applicability .col-app-main,
@@ -691,11 +703,11 @@ th:first-child {
 .monetization-section-title {
   font-size: 24px;
   line-height: 26px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .monetization-panel .note {
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .monetization-card {
@@ -725,7 +737,7 @@ th:first-child {
 .monetization-panel .insight-title,
 .monetization-panel .body-text,
 .monetization-panel .note-list li {
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .monetization-list {
@@ -745,7 +757,7 @@ th:first-child {
 .discovery-section-title {
   font-size: 24px;
   line-height: 26px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .discovery-card-body {
@@ -763,7 +775,7 @@ th:first-child {
 .discovery-panel .insight-title,
 .discovery-panel .body-text,
 .discovery-panel .note-list li {
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .discovery-panel .note-list {
@@ -786,14 +798,14 @@ th:first-child {
 .medicine-market-title {
   font-size: 24px;
   line-height: 26px;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
 .medicine-market-panel .note {
   font-size: 14px;
   line-height: 20px;
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .medicine-market-panel .table-wrap {
@@ -812,7 +824,11 @@ th:first-child {
 }
 
 .medicine-market-panel th {
-  font-weight: 600;
+  font-weight: 500;
+}
+
+.medicine-market-panel td {
+  font-weight: 400;
 }
 
 .medicine-logic-card {
@@ -824,13 +840,13 @@ th:first-child {
 .medicine-logic-label {
   font-size: 14px;
   line-height: 20px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .medicine-logic-text {
   font-size: 16px;
   line-height: 24px;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .medicine-audience-panel {
@@ -841,7 +857,7 @@ th:first-child {
   margin: 0;
   font-size: 20px;
   line-height: 26px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--fg-default);
 }
 
@@ -861,7 +877,11 @@ th:first-child {
 }
 
 .medicine-audience-panel th {
-  font-weight: 700;
+  font-weight: 500;
+}
+
+.medicine-audience-panel td {
+  font-weight: 400;
 }
 
 .medicine-audience-detail-grid {
@@ -888,13 +908,13 @@ th:first-child {
 .medicine-audience-detail-label {
   font-size: 14px;
   line-height: 20px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .medicine-audience-detail-text {
   font-size: 16px;
   line-height: 24px;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .medicine-problem-panel {
@@ -913,7 +933,11 @@ th:first-child {
 }
 
 .medicine-problem-panel th {
-  font-weight: 700;
+  font-weight: 500;
+}
+
+.medicine-problem-panel td {
+  font-weight: 400;
 }
 
 .medicine-problem-panel th:first-child,
@@ -938,14 +962,14 @@ th:first-child {
   margin: 0;
   font-size: 20px;
   line-height: 26px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--fg-default);
 }
 
 .medicine-problem-card-text {
   font-size: 16px;
   line-height: 24px;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .medicine-value-panel {
@@ -955,7 +979,7 @@ th:first-child {
 .medicine-value-panel .note {
   font-size: 14px;
   line-height: 20px;
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .medicine-value-panel .data-table {
@@ -970,7 +994,11 @@ th:first-child {
 }
 
 .medicine-value-panel th {
-  font-weight: 700;
+  font-weight: 500;
+}
+
+.medicine-value-panel td {
+  font-weight: 400;
 }
 
 .medicine-value-panel th:first-child,
@@ -1002,7 +1030,7 @@ th:first-child {
 .medicine-strategic-list li {
   font-size: 16px;
   line-height: 24px;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .medicine-channel-panel {
@@ -1021,11 +1049,11 @@ th:first-child {
 }
 
 .medicine-channel-panel th {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .medicine-channel-panel td {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .medicine-channel-panel th:first-child,
@@ -1049,11 +1077,11 @@ th:first-child {
 }
 
 .medicine-monetization-panel th {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .medicine-monetization-panel td {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .medicine-monetization-panel th:first-child,
@@ -1084,11 +1112,11 @@ th:first-child {
 }
 
 .medicine-summary-panel th {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .medicine-summary-panel td {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .medicine-summary-panel th:first-child,
@@ -1106,7 +1134,7 @@ th:first-child {
 .medicine-summary-card-text {
   font-size: 16px;
   line-height: 24px;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .medicine-entry-panel {
@@ -1116,7 +1144,7 @@ th:first-child {
 .medicine-entry-title {
   font-size: 24px;
   line-height: 26px;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: none;
 }
 
@@ -1132,11 +1160,11 @@ th:first-child {
 }
 
 .medicine-entry-panel th {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .medicine-entry-panel td {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .medicine-entry-panel th:first-child,
@@ -1151,7 +1179,7 @@ th:first-child {
 .medicine-product-title {
   font-size: 24px;
   line-height: 26px;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: none;
 }
 
@@ -1164,7 +1192,7 @@ th:first-child {
 .medicine-product-panel .body-text {
   font-size: 16px;
   line-height: 24px;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .medicine-cards-grid {
@@ -1194,7 +1222,7 @@ th:first-child {
   margin: 0;
   font-size: 24px;
   line-height: 26px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--fg-default);
 }
 
@@ -1207,7 +1235,7 @@ th:first-child {
   margin: 0;
   font-size: 16px;
   line-height: 24px;
-  font-weight: 500;
+  font-weight: 300;
   color: var(--fg-default);
 }
 
