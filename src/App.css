@@ -95,7 +95,6 @@
 .tab-button.is-active {
   background: linear-gradient(124deg, #3e7dd8 0%, var(--accent-soft) 100%);
   color: var(--accent-on-accent);
-  box-shadow: 0 10px 24px rgba(62, 125, 216, 0.18);
 }
 
 .hero {
