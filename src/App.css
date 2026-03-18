@@ -39,14 +39,20 @@
 
 .tab-bar {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 8px;
   padding: 8px;
   width: 100%;
   min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--border-muted);
   border-radius: 32px;
+}
+
+.tab-bar::-webkit-scrollbar {
+  display: none;
 }
 
 .tab-button {
@@ -54,7 +60,9 @@
   border-radius: 999px;
   background: transparent;
   color: var(--fg-default);
-  padding: 12px 18px;
+  padding: 12px 12px;
+  flex: 0 0 auto;
+  white-space: nowrap;
   font: inherit;
   font-size: 15px;
   line-height: 20px;
@@ -1245,23 +1253,6 @@ th:first-child {
     gap: 7px;
   }
 
-  .tab-bar {
-    overflow-x: auto;
-    scrollbar-width: none;
-    width: 100%;
-    flex-wrap: nowrap;
-  }
-
-  .tab-bar::-webkit-scrollbar {
-    display: none;
-  }
-
-  .tab-button {
-    flex: 0 0 auto;
-    white-space: nowrap;
-    text-align: center;
-  }
-
   .hero {
     padding: 28px 20px;
   }
@@ -1489,10 +1480,6 @@ th:first-child {
   th,
   td {
     padding: 8px 10px;
-  }
-
-  .tab-bar {
-    border-radius: 32px;
   }
 
 }
