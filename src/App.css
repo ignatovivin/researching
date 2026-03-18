@@ -31,13 +31,10 @@
   top: 0;
   z-index: 10;
   width: 100%;
+  min-width: 0;
   padding-top: 4px;
   background: linear-gradient(180deg, rgba(246, 246, 246, 0.98), rgba(246, 246, 246, 0.86));
   backdrop-filter: blur(10px);
-}
-
-.tab-scroll {
-  width: 100%;
 }
 
 .tab-bar {
@@ -45,6 +42,8 @@
   flex-wrap: wrap;
   gap: 8px;
   padding: 8px;
+  width: 100%;
+  min-width: 0;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--border-muted);
   border-radius: 32px;
@@ -1246,19 +1245,15 @@ th:first-child {
     gap: 7px;
   }
 
-  .tab-scroll {
+  .tab-bar {
     overflow-x: auto;
     scrollbar-width: none;
-  }
-
-  .tab-scroll::-webkit-scrollbar {
-    display: none;
-  }
-
-  .tab-bar {
-    width: max-content;
-    min-width: 100%;
+    width: 100%;
     flex-wrap: nowrap;
+  }
+
+  .tab-bar::-webkit-scrollbar {
+    display: none;
   }
 
   .hero {
