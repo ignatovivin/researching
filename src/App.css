@@ -41,10 +41,20 @@
   width: 100%;
   overflow-x: auto;
   scrollbar-width: none;
+  cursor: grab;
 }
 
 .tab-scroll::-webkit-scrollbar {
   display: none;
+}
+
+.tab-scroll.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.tab-scroll.is-dragging .tab-button {
+  pointer-events: none;
 }
 
 .tab-bar {

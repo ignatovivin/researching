@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import './App.css'
 
 const tabs = [
@@ -3088,11 +3088,93 @@ function TravelTab() {
 
 function App() {
   const [activeTab, setActiveTab] = useState('fitness')
+  const tabScrollRef = useRef(null)
+  const dragStateRef = useRef({
+    pointerId: null,
+    startX: 0,
+    startScrollLeft: 0,
+    moved: false,
+  })
+
+  const handleTabPointerDown = (event) => {
+    if (event.button !== 0) {
+      return
+    }
+
+    const container = tabScrollRef.current
+
+    if (!container) {
+      return
+    }
+
+    dragStateRef.current = {
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startScrollLeft: container.scrollLeft,
+      moved: false,
+    }
+
+    container.classList.add('is-dragging')
+    container.setPointerCapture(event.pointerId)
+  }
+
+  const handleTabPointerMove = (event) => {
+    const container = tabScrollRef.current
+    const dragState = dragStateRef.current
+
+    if (!container || dragState.pointerId !== event.pointerId) {
+      return
+    }
+
+    const deltaX = event.clientX - dragState.startX
+
+    if (Math.abs(deltaX) > 4) {
+      dragState.moved = true
+    }
+
+    container.scrollLeft = dragState.startScrollLeft - deltaX
+  }
+
+  const handleTabPointerEnd = (event) => {
+    const container = tabScrollRef.current
+    const dragState = dragStateRef.current
+
+    if (!container || dragState.pointerId !== event.pointerId) {
+      return
+    }
+
+    container.classList.remove('is-dragging')
+
+    if (container.hasPointerCapture(event.pointerId)) {
+      container.releasePointerCapture(event.pointerId)
+    }
+
+    window.setTimeout(() => {
+      dragStateRef.current.moved = false
+    }, 0)
+
+    dragStateRef.current.pointerId = null
+  }
+
+  const handleTabClick = (tabId) => {
+    if (dragStateRef.current.moved) {
+      return
+    }
+
+    setActiveTab(tabId)
+  }
 
   return (
     <main className="page">
       <section className="tab-shell">
-        <div className="tab-scroll">
+        <div
+          ref={tabScrollRef}
+          className="tab-scroll"
+          onPointerDown={handleTabPointerDown}
+          onPointerMove={handleTabPointerMove}
+          onPointerUp={handleTabPointerEnd}
+          onPointerCancel={handleTabPointerEnd}
+        >
           <div className="tab-bar" role="tablist" aria-label="Разделы сайта">
             {tabs.map((tab) => (
               <button
@@ -3101,7 +3183,7 @@ function App() {
                 role="tab"
                 aria-selected={activeTab === tab.id}
                 className={`tab-button ${activeTab === tab.id ? 'is-active' : ''}`.trim()}
-                onClick={() => setActiveTab(tab.id)}
+                onClick={() => handleTabClick(tab.id)}
               >
                 {tab.label}
               </button>
