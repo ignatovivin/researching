@@ -3167,27 +3167,29 @@ function App() {
   return (
     <main className="page">
       <section className="tab-shell">
-        <div
-          ref={tabScrollRef}
-          className="tab-scroll"
-          onPointerDown={handleTabPointerDown}
-          onPointerMove={handleTabPointerMove}
-          onPointerUp={handleTabPointerEnd}
-          onPointerCancel={handleTabPointerEnd}
-        >
-          <div className="tab-bar" role="tablist" aria-label="Разделы сайта">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                type="button"
-                role="tab"
-                aria-selected={activeTab === tab.id}
-                className={`tab-button ${activeTab === tab.id ? 'is-active' : ''}`.trim()}
-                onClick={() => handleTabClick(tab.id)}
-              >
-                {tab.label}
-              </button>
-            ))}
+        <div className="tab-frame">
+          <div
+            ref={tabScrollRef}
+            className="tab-scroll"
+            onPointerDown={handleTabPointerDown}
+            onPointerMove={handleTabPointerMove}
+            onPointerUp={handleTabPointerEnd}
+            onPointerCancel={handleTabPointerEnd}
+          >
+            <div className="tab-bar" role="tablist" aria-label="Разделы сайта">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={activeTab === tab.id}
+                  className={`tab-button ${activeTab === tab.id ? 'is-active' : ''}`.trim()}
+                  onClick={() => handleTabClick(tab.id)}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </section>

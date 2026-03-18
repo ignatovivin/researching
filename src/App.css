@@ -37,6 +37,15 @@
   backdrop-filter: blur(10px);
 }
 
+.tab-frame {
+  width: 100%;
+  padding: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--border-muted);
+  border-radius: 32px;
+}
+
 .tab-scroll {
   width: 100%;
   overflow-x: auto;
@@ -61,12 +70,7 @@
   display: flex;
   flex-wrap: nowrap;
   gap: 8px;
-  padding: 8px;
   width: max-content;
-  min-width: 100%;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid var(--border-muted);
-  border-radius: 32px;
 }
 
 .tab-button {
