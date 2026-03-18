@@ -3114,7 +3114,6 @@ function App() {
       moved: false,
     }
 
-    container.classList.add('is-dragging')
     container.setPointerCapture(event.pointerId)
   }
 
@@ -3130,6 +3129,7 @@ function App() {
 
     if (Math.abs(deltaX) > 4) {
       dragState.moved = true
+      container.classList.add('is-dragging')
     }
 
     container.scrollLeft = dragState.startScrollLeft - deltaX
