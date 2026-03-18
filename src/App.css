@@ -1387,47 +1387,51 @@ th:first-child {
   }
 
   .hero-title {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 26px;
+    line-height: 34px;
   }
 
   .section-title-text {
-    font-size: 22px;
-    line-height: 28px;
+    font-size: 24px;
+    line-height: 30px;
   }
 
   .block-title {
-    font-size: 20px;
-    line-height: 22px;
+    font-size: 21px;
+    line-height: 26px;
   }
 
   .market-section-title {
-    font-size: 22px;
-    line-height: 24px;
+    font-size: 21px;
+    line-height: 26px;
   }
 
   .market-content-title {
-    font-size: 18px;
+    font-size: 19px;
     line-height: 24px;
   }
 
   .structural-section-title {
-    font-size: 22px;
-    line-height: 24px;
+    font-size: 21px;
+    line-height: 26px;
   }
 
   .subtitle,
   .body-text,
-  .body-strong,
-  .jtbd-title,
   .note-list li {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .body-strong,
+  .jtbd-title {
+    font-size: 18px;
+    line-height: 24px;
   }
 
   .kpi-value {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 26px;
+    line-height: 34px;
   }
 
   .kpi-label,
@@ -1435,7 +1439,7 @@ th:first-child {
   .kpi-unit,
   .insight-title,
   .note {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 18px;
   }
 
@@ -1557,43 +1561,55 @@ th:first-child {
   }
 
   .subtitle {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 20px;
   }
 
   .hero-title {
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 22px;
+    line-height: 30px;
   }
 
   .section-title-text {
-    font-size: 19px;
-    line-height: 24px;
+    font-size: 21px;
+    line-height: 28px;
   }
 
   .block-title {
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 19px;
+    line-height: 24px;
   }
 
   .market-section-title {
     font-size: 19px;
-    line-height: 24px;
+    line-height: 26px;
   }
 
   .market-content-title {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 22px;
   }
 
   .structural-section-title {
     font-size: 19px;
-    line-height: 24px;
+    line-height: 26px;
+  }
+
+  .body-text,
+  .note-list li {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .body-strong,
+  .jtbd-title {
+    font-size: 17px;
+    line-height: 22px;
   }
 
   .kpi-value {
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 22px;
+    line-height: 30px;
   }
 
   .kpi-label,
@@ -1601,15 +1617,15 @@ th:first-child {
   .kpi-unit,
   .insight-title,
   .note {
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 13px;
+    line-height: 18px;
   }
 
   th,
   td {
     padding: 7px 8px;
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 13px;
+    line-height: 18px;
   }
 }
 
