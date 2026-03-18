@@ -42,7 +42,7 @@
   padding: 8px;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--border-muted);
-  border-radius: 999px;
+  border-radius: 32px;
 }
 
 .tab-button {
@@ -1241,6 +1241,21 @@ th:first-child {
     gap: 7px;
   }
 
+  .tab-shell {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .tab-shell::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-bar {
+    width: max-content;
+    min-width: 100%;
+    flex-wrap: nowrap;
+  }
+
   .hero {
     padding: 28px 20px;
   }
@@ -1471,11 +1486,12 @@ th:first-child {
   }
 
   .tab-bar {
-    border-radius: 20px;
+    border-radius: 32px;
   }
 
   .tab-button {
-    width: 100%;
+    flex: 0 0 auto;
+    white-space: nowrap;
     text-align: center;
   }
 }
