@@ -3092,19 +3092,21 @@ function App() {
   return (
     <main className="page">
       <section className="tab-shell">
-        <div className="tab-bar" role="tablist" aria-label="Разделы сайта">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              type="button"
-              role="tab"
-              aria-selected={activeTab === tab.id}
-              className={`tab-button ${activeTab === tab.id ? 'is-active' : ''}`.trim()}
-              onClick={() => setActiveTab(tab.id)}
-            >
-              {tab.label}
-            </button>
-          ))}
+        <div className="tab-scroll">
+          <div className="tab-bar" role="tablist" aria-label="Разделы сайта">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                role="tab"
+                aria-selected={activeTab === tab.id}
+                className={`tab-button ${activeTab === tab.id ? 'is-active' : ''}`.trim()}
+                onClick={() => setActiveTab(tab.id)}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 

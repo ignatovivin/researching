@@ -30,9 +30,14 @@
   position: sticky;
   top: 0;
   z-index: 10;
+  width: 100%;
   padding-top: 4px;
   background: linear-gradient(180deg, rgba(246, 246, 246, 0.98), rgba(246, 246, 246, 0.86));
   backdrop-filter: blur(10px);
+}
+
+.tab-scroll {
+  width: 100%;
 }
 
 .tab-bar {
@@ -1241,12 +1246,12 @@ th:first-child {
     gap: 7px;
   }
 
-  .tab-shell {
+  .tab-scroll {
     overflow-x: auto;
     scrollbar-width: none;
   }
 
-  .tab-shell::-webkit-scrollbar {
+  .tab-scroll::-webkit-scrollbar {
     display: none;
   }
 
