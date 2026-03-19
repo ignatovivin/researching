@@ -231,14 +231,14 @@
   gap: 4px;
   font-size: 32px;
   line-height: 44px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .medicine-stat-unit {
   margin-bottom: 7px;
   font-size: 14px;
   line-height: 20px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--fg-muted);
 }
 
