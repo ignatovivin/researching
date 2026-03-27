@@ -26,6 +26,77 @@
   color: var(--fg-default);
 }
 
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--border-muted);
+  border-radius: 32px;
+  backdrop-filter: blur(10px);
+}
+
+.site-header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.site-header-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: linear-gradient(124deg, #3e7dd8 0%, var(--accent-soft) 100%);
+  color: var(--accent-on-accent);
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+.site-header-name {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.site-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-header-link {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: transparent;
+  color: var(--fg-default);
+  font: inherit;
+  font-size: 15px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.site-header-link:hover {
+  background: rgba(62, 125, 216, 0.08);
+}
+
+.site-header-link.is-active {
+  background: rgba(62, 125, 216, 0.12);
+}
+
+.section-anchor-target {
+  scroll-margin-top: 148px;
+}
+
 .tab-shell {
   position: sticky;
   top: 0;
@@ -1298,6 +1369,11 @@ th:first-child {
     gap: 7px;
   }
 
+  .site-header {
+    padding: 12px 14px;
+    border-radius: 24px;
+  }
+
   .hero {
     padding: 28px 20px;
   }
@@ -1471,6 +1547,22 @@ th:first-child {
     line-height: 18px;
   }
 
+  .site-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    border-radius: var(--radius-xl);
+  }
+
+  .site-header-nav {
+    width: 100%;
+  }
+
+  .site-header-link {
+    flex: 1 1 0;
+    text-align: center;
+  }
+
   .hero,
   .panel,
   .kpi-card {
@@ -1544,6 +1636,20 @@ th:first-child {
 
   #root {
     padding: 10px 8px 18px;
+  }
+
+  .site-header {
+    padding: 12px 10px;
+  }
+
+  .site-header-mark {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .site-header-name {
+    font-size: 15px;
   }
 
   .page {
