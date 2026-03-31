@@ -1,5 +1,9 @@
-import { useEffect, useRef, useState } from 'react'
+import { Suspense, lazy, useEffect, useRef, useState } from 'react'
 import './App.css'
+
+const CompetitorsPage = lazy(() => import('./pages/CompetitorsPage'))
+const EconomicsPage = lazy(() => import('./pages/EconomicsPage'))
+const RnkoPage = lazy(() => import('./pages/RnkoPage'))
 
 const tabs = [
   { id: 'fitness', label: 'Фитнес' },
@@ -6281,28 +6285,16 @@ function App() {
         ) : (
           <TravelTab />
         )
-      ) : activePage === 'competitors' ? (
-        activeCompetitorTab === 'competitors-economics' ? (
-          <CompetitorsEconomicsTab />
-        ) : activeCompetitorTab === 'org-segmentation' ? (
-          <OrgSegmentationTab />
-        ) : activeCompetitorTab === 'competitor-weaknesses' ? (
-          <CompetitorWeaknessesTab />
-        ) : activeCompetitorTab === 'jtbd' ? (
-          <JTBDTab />
-        ) : activeCompetitorTab === 'competitor-cases' ? (
-          <CompetitorCasesTab />
-        ) : null
-      ) : activePage === 'economics' ? (
-        activeEconomicsTab === 'profitpool' ? (
-          <ProfitPoolTab />
-        ) : activeEconomicsTab === 'market-benefit' ? (
-          <MarketBenefitTab />
-        ) : (
-          <UnitEconomicsTab />
-        )
       ) : (
-        <RNKOKazakhstanTab />
+        <Suspense fallback={<section className="panel section-panel medicine-panel"><p className="subtitle">Загрузка раздела...</p></section>}>
+          {activePage === 'competitors' ? (
+            <CompetitorsPage activeTab={activeCompetitorTab} />
+          ) : activePage === 'economics' ? (
+            <EconomicsPage activeTab={activeEconomicsTab} />
+          ) : (
+            <RnkoPage activeTab={activeRnkoTab} />
+          )}
+        </Suspense>
       )}
     </main>
   )
