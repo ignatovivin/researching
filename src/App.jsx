@@ -3,6 +3,7 @@ import './App.css'
 
 const CompetitorsPage = lazy(() => import('./pages/CompetitorsPage'))
 const EconomicsPage = lazy(() => import('./pages/EconomicsPage'))
+const MarketsPage = lazy(() => import('./pages/MarketsPage'))
 const RnkoPage = lazy(() => import('./pages/RnkoPage'))
 
 const tabs = [
@@ -6255,47 +6256,17 @@ function App() {
         </div>
       </section>
 
-      {activePage === 'markets' ? (
-        activeTab === 'fitness' ? (
-          <FitnessTab />
-        ) : activeTab === 'medicine' ? (
-          <MedicineTab />
-        ) : activeTab === 'gaming' ? (
-          <GamingTab />
-        ) : activeTab === 'beauty' ? (
-          <BeautyTab />
-        ) : activeTab === 'events' ? (
-          <EventsTab />
-        ) : activeTab === 'education' ? (
-          <EducationTab />
-        ) : activeTab === 'insurance' ? (
-          <InsuranceTab />
-        ) : activeTab === 'car-purchase' ? (
-          <CarPurchaseTab />
-        ) : activeTab === 'cleaning' ? (
-          <CleaningTab />
-        ) : activeTab === 'autoservices' ? (
-          <AutoservicesTab />
-        ) : activeTab === 'home' ? (
-          <HomeTab />
-        ) : activeTab === 'apartment-rent' ? (
-          <ApartmentRentTab />
-        ) : activeTab === 'eldercare' ? (
-          <EldercareTab />
+      <Suspense fallback={<section className="panel section-panel medicine-panel"><p className="subtitle">Загрузка раздела...</p></section>}>
+        {activePage === 'markets' ? (
+          <MarketsPage activeTab={activeTab} />
+        ) : activePage === 'competitors' ? (
+          <CompetitorsPage activeTab={activeCompetitorTab} />
+        ) : activePage === 'economics' ? (
+          <EconomicsPage activeTab={activeEconomicsTab} />
         ) : (
-          <TravelTab />
-        )
-      ) : (
-        <Suspense fallback={<section className="panel section-panel medicine-panel"><p className="subtitle">Загрузка раздела...</p></section>}>
-          {activePage === 'competitors' ? (
-            <CompetitorsPage activeTab={activeCompetitorTab} />
-          ) : activePage === 'economics' ? (
-            <EconomicsPage activeTab={activeEconomicsTab} />
-          ) : (
-            <RnkoPage activeTab={activeRnkoTab} />
-          )}
-        </Suspense>
-      )}
+          <RnkoPage activeTab={activeRnkoTab} />
+        )}
+      </Suspense>
     </main>
   )
 }
