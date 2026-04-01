@@ -510,7 +510,7 @@ const unitEconomicsSections = [
     cards: [
       ['Почему это важно', 'Один и тот же billing-unit может быть очень прибыльным или заметно хуже по экономике только из-за канала уведомления. Это критично для прайсинга A3.'],
       ['Новый масштабный вывод', 'При 300+ млрд ₽ оборота и среднем чеке около 1 000 ₽ число транзакций превышает 300 млн в год. Даже небольшая доля подписок делает billing-слой материально значимым для contribution margin A3.'],
-      ['Смысл графиков', 'Графики из markdown показывают две вещи: billing-юнит резко выигрывает при in-app доставке, а по общей CM-картине strongest-слои для A3 это antifraud после масштаба, reconciliation, data и billing, тогда как support, merchant acquisition и GIS ЖКХ важны стратегически, но почти не несут прямой маржи.'],
+      ['Смысл графиков', 'Графики показывают две вещи: billing-юнит резко выигрывает при in-app доставке, а по общей CM-картине strongest-слои для A3 это antifraud после масштаба, reconciliation, data и billing, тогда как support, merchant acquisition и GIS ЖКХ важны стратегически, но почти не несут прямой маржи.'],
     ],
   },
   {
@@ -568,7 +568,7 @@ function ProfitPoolTab() {
   return (
     <IndustryTab
       heroTitle="ProfitPool платёжной инфраструктуры РФ для A3"
-      heroText="Страница собрана из детального markdown-отчёта по каждому абзацу, пункту и цифре. Ключевой вывод: крупнейшая прибыль находится в эквайринге и эмиссии, но лучший стратегический слой для A3 лежит в billing, recurring, GIS ЖКХ, split-механиках и данных, а commodity-компоненты выгоднее подключать через партнёров."
+      heroText="Крупнейшая прибыль находится в эквайринге и эмиссии, но лучший стратегический слой для A3 лежит в billing, recurring, GIS ЖКХ, split-механиках и данных, а commodity-компоненты выгоднее подключать через партнёров."
       cards={profitPoolCards}
       overviewCards={profitPoolOverviewCards}
       sections={profitPoolSections}
@@ -582,7 +582,7 @@ function MarketBenefitTab() {
   return (
     <IndustryTab
       heroTitle="Польза рынку и польза продукту A3"
-      heroText="Страница собрана по всему markdown-отчёту о том, какую ценность каждое звено платёжной цепочки приносит рынку и что именно из этого создаёт экономику, удержание, данные и стратегическое преимущество для A3. Главный вывод: A3 должен владеть recurring-контентом, начислениями, уведомлениями, сверкой и данными, а инфраструктурные commodity-слои подключать через партнёров."
+      heroText="Ценность каждого звена платёжной цепочки для рынка и для самого A3 различается. Главный вывод: A3 должен владеть recurring-контентом, начислениями, уведомлениями, сверкой и данными, а инфраструктурные commodity-слои подключать через партнёров."
       cards={marketBenefitCards}
       overviewCards={marketBenefitOverviewCards}
       sections={marketBenefitSections}
@@ -596,7 +596,7 @@ function UnitEconomicsTab() {
   return (
     <IndustryTab
       heroTitle="Unit economics по звеньям платежной цепочки для A3"
-      heroText="Страница собрана по всему markdown-отчёту о unit economics: какие звенья быстрее окупаются, где contribution margin выше, какие fixed-cost создают floor затрат и что именно A3 должен строить сам, а что подключать через партнёров. Главный вывод: самые сильные юниты A3 находятся в billing, data, in-app notification и reconciliation, а payment rails и тяжёлый compliance-слой нужно держать партнерскими."
+      heroText="Unit economics A3 показывает, какие звенья быстрее окупаются, где contribution margin выше и что именно стоит строить самим, а что подключать через партнёров. Главный вывод: самые сильные юниты A3 находятся в billing, data, in-app notification и reconciliation, а payment rails и тяжёлый compliance-слой лучше держать партнерскими."
       cards={unitEconomicsCards}
       overviewCards={unitEconomicsOverviewCards}
       sections={unitEconomicsSections}

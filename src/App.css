@@ -511,7 +511,7 @@
 
 .pressure-card {
   display: grid;
-  gap: 8px;
+  gap: 12px;
   padding: 24px;
   background: rgba(124, 138, 158, 0.03);
   border: 1px solid rgba(124, 138, 158, 0.15);
@@ -520,7 +520,7 @@
 
 .jtbd-card {
   display: grid;
-  gap: 16px;
+  gap: 12px;
   padding: 24px;
   background: rgba(124, 138, 158, 0.03);
   border: 1px solid rgba(124, 138, 158, 0.15);
@@ -655,11 +655,11 @@ th:first-child {
 
 .structural-panel .pressure-intro {
   display: grid;
-  gap: 4px;
+  gap: 12px;
 }
 
 .structural-panel .pressure-card .note-list {
-  gap: 0;
+  gap: 8px;
 }
 
 .structural-panel .pressure-card .note-list li,
@@ -686,7 +686,7 @@ th:first-child {
 
 .segmentation-card {
   display: grid;
-  gap: 16px;
+  gap: 12px;
   padding: 24px;
   background: rgba(124, 138, 158, 0.03);
   border: 1px solid rgba(124, 138, 158, 0.15);
@@ -695,7 +695,7 @@ th:first-child {
 
 .segmentation-group {
   display: grid;
-  gap: 4px;
+  gap: 12px;
 }
 
 .segmentation-panel .insight-title,
@@ -723,7 +723,7 @@ th:first-child {
 }
 
 .segmentation-card .note-list {
-  gap: 0;
+  gap: 8px;
 }
 
 .jtbd-section-title {
@@ -745,12 +745,12 @@ th:first-child {
 }
 
 .jtbd-panel .note-list {
-  gap: 0;
+  gap: 8px;
 }
 
 .jtbd-panel .jtbd-pair {
   display: grid;
-  gap: 4px;
+  gap: 12px;
 }
 
 .alternatives-content {
@@ -834,7 +834,7 @@ th:first-child {
 
 .monetization-card {
   display: grid;
-  gap: 24px;
+  gap: 12px;
   padding: 24px;
   background: rgba(124, 138, 158, 0.03);
   border: 1px solid rgba(124, 138, 158, 0.15);
@@ -848,7 +848,7 @@ th:first-child {
 
 .monetization-pair {
   display: grid;
-  gap: 4px;
+  gap: 12px;
 }
 
 .monetization-divider {
@@ -863,7 +863,7 @@ th:first-child {
 }
 
 .monetization-list {
-  gap: 0;
+  gap: 8px;
 }
 
 .discovery-content {
@@ -891,7 +891,7 @@ th:first-child {
 
 .discovery-pair {
   display: grid;
-  gap: 4px;
+  gap: 12px;
 }
 
 .discovery-panel .insight-title,
@@ -901,7 +901,7 @@ th:first-child {
 }
 
 .discovery-panel .note-list {
-  gap: 0;
+  gap: 8px;
 }
 
 .medicine-panel {
