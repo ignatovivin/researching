@@ -74,7 +74,9 @@ function shouldRenderTableFirst(title) {
     title === '9. Иллюстративные расчёты' ||
     title === '10. Рекомендации для A3' ||
     title === '10. Сегментная карта ценности' ||
-    title === '11. A3 Recommendations'
+    title === '11. A3 Recommendations' ||
+    title === '5. Value Proposition' ||
+    title === '6. Competitive Landscape'
   )
 }
 
