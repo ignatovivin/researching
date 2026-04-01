@@ -6010,6 +6010,7 @@ function App() {
   const [activeCompetitorTab, setActiveCompetitorTab] = useState('competitors-economics')
   const [activeEconomicsTab, setActiveEconomicsTab] = useState('profitpool')
   const [activeRnkoTab, setActiveRnkoTab] = useState('kazakhstan')
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
   const tabScrollRef = useRef(null)
   const hasInitializedRouteRef = useRef(false)
   const dragStateRef = useRef({
@@ -6128,6 +6129,20 @@ function App() {
   }, [])
 
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsMobileNavOpen(false)
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+  useEffect(() => {
     if (!hasInitializedRouteRef.current) {
       return
     }
@@ -6172,6 +6187,7 @@ function App() {
 
   const handlePageClick = (pageId) => {
     setActivePage(pageId)
+    setIsMobileNavOpen(false)
   }
 
   const visibleTabs =
@@ -6199,7 +6215,24 @@ function App() {
           <span className="site-header-name">Research</span>
         </div>
 
-        <nav className="site-header-nav" aria-label="Основная навигация">
+        <button
+          type="button"
+          className={`site-header-burger ${isMobileNavOpen ? 'is-active' : ''}`.trim()}
+          aria-label={isMobileNavOpen ? 'Закрыть навигацию' : 'Открыть навигацию'}
+          aria-expanded={isMobileNavOpen}
+          aria-controls="site-header-nav"
+          onClick={() => setIsMobileNavOpen((current) => !current)}
+        >
+          <span className="site-header-burger-line" />
+          <span className="site-header-burger-line" />
+          <span className="site-header-burger-line" />
+        </button>
+
+        <nav
+          id="site-header-nav"
+          className={`site-header-nav ${isMobileNavOpen ? 'is-open' : ''}`.trim()}
+          aria-label="Основная навигация"
+        >
           <button
             type="button"
             className={`site-header-link ${activePage === 'markets' ? 'is-active' : ''}`.trim()}

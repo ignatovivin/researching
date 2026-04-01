@@ -34,7 +34,7 @@
   padding: 14px 18px;
   background: rgba(255, 255, 255, 0.78);
   border: 1px solid var(--border-muted);
-  border-radius: 32px;
+  border-radius: var(--radius-xl);
   backdrop-filter: blur(10px);
 }
 
@@ -70,6 +70,57 @@
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.site-header-burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--border-muted);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.84);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.site-header-burger:hover {
+  background: rgba(62, 125, 216, 0.08);
+}
+
+.site-header-burger-line {
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--fg-default);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.site-header-burger-line:nth-child(1) {
+  transform: translateY(-6px);
+}
+
+.site-header-burger-line:nth-child(2) {
+  transform: translateY(0);
+}
+
+.site-header-burger-line:nth-child(3) {
+  transform: translateY(6px);
+}
+
+.site-header-burger.is-active .site-header-burger-line:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+}
+
+.site-header-burger.is-active .site-header-burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header-burger.is-active .site-header-burger-line:nth-child(3) {
+  transform: translateY(0) rotate(-45deg);
 }
 
 .site-header-link {
@@ -114,7 +165,7 @@
   overflow: hidden;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--border-muted);
-  border-radius: 32px;
+  border-radius: var(--radius-xl);
 }
 
 .tab-scroll {
@@ -1371,7 +1422,7 @@ th:first-child {
 
   .site-header {
     padding: 12px 14px;
-    border-radius: 24px;
+    border-radius: var(--radius-xl);
   }
 
   .hero {
@@ -1548,19 +1599,36 @@ th:first-child {
   }
 
   .site-header {
-    flex-direction: column;
-    align-items: stretch;
+    position: relative;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     gap: 12px;
     border-radius: var(--radius-xl);
   }
 
+  .site-header-burger {
+    position: relative;
+    display: inline-flex;
+    flex: 0 0 auto;
+  }
+
   .site-header-nav {
     width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding-top: 4px;
+  }
+
+  .site-header-nav.is-open {
+    display: flex;
   }
 
   .site-header-link {
-    flex: 1 1 0;
-    text-align: center;
+    width: 100%;
+    text-align: left;
   }
 
   .hero,
@@ -1640,6 +1708,11 @@ th:first-child {
 
   .site-header {
     padding: 12px 10px;
+  }
+
+  .site-header-burger {
+    width: 40px;
+    height: 40px;
   }
 
   .site-header-mark {
