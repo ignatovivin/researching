@@ -1,3 +1,5 @@
+import SummaryCard from './SummaryCard'
+
 function DataTable({ table }) {
   return (
     <div className="table-wrap">
@@ -25,14 +27,14 @@ function DataTable({ table }) {
 
 function ListCard({ title, items }) {
   return (
-    <article className="summary-card">
+    <SummaryCard>
       <p className="insight-title">{title}</p>
       <ul className="note-list">
         {items.map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
-    </article>
+    </SummaryCard>
   )
 }
 
@@ -103,7 +105,7 @@ function IndustryTab({
   competitorsRef,
 }) {
   return (
-    <>
+    <div className="industry-tab">
       <section className="hero medicine-hero">
         <div className="medicine-hero-content">
           <h1 className="hero-title medicine-hero-title">{heroTitle}</h1>
@@ -202,10 +204,10 @@ function IndustryTab({
           {section.problemCardsTop ? (
             <div className="medicine-problem-card-stack">
               {section.problemCardsTop.map(([title, value]) => (
-                <article key={title} className="summary-card medicine-problem-card">
-                  <p className="medicine-problem-card-title">{title}</p>
-                  <p className="body-text medicine-problem-card-text">{value}</p>
-                </article>
+                <SummaryCard key={title} className="medicine-problem-card">
+                  <p className="insight-title">{title}</p>
+                  <p className="body-text">{value}</p>
+                </SummaryCard>
               ))}
             </div>
           ) : null}
@@ -219,38 +221,38 @@ function IndustryTab({
           {section.problemCardsBottom ? (
             <div className="medicine-problem-card-stack">
               {section.problemCardsBottom.map(([title, value]) => (
-                <article key={title} className="summary-card medicine-problem-card">
-                  <p className="medicine-problem-card-title">{title}</p>
-                  <p className="body-text medicine-problem-card-text">{value}</p>
-                </article>
+                <SummaryCard key={title} className="medicine-problem-card">
+                  <p className="insight-title">{title}</p>
+                  <p className="body-text">{value}</p>
+                </SummaryCard>
               ))}
             </div>
           ) : null}
 
           {section.valueRelevance ? (
-            <article className="summary-card medicine-value-card">
-              <p className="medicine-problem-card-title">{section.valueRelevance.title}</p>
-              <p className="body-text medicine-problem-card-text">{section.valueRelevance.text}</p>
-            </article>
+            <SummaryCard className="medicine-value-card">
+              <p className="insight-title">{section.valueRelevance.title}</p>
+              <p className="body-text">{section.valueRelevance.text}</p>
+            </SummaryCard>
           ) : null}
 
           {section.strategicCard ? (
-            <article className="summary-card medicine-strategic-card">
-              <p className="medicine-problem-card-title">{section.strategicCard.title}</p>
+            <SummaryCard className="medicine-strategic-card">
+              <p className="insight-title">{section.strategicCard.title}</p>
               <ul className="note-list medicine-strategic-list">
                 {section.strategicCard.items.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-            </article>
+            </SummaryCard>
           ) : null}
 
           {section.paragraphs?.length ? (
             <div className="section-body">
               {section.paragraphs.map((paragraph) => (
-                <article key={paragraph} className="summary-card">
+                <SummaryCard key={paragraph}>
                   <p className="body-text">{paragraph}</p>
-                </article>
+                </SummaryCard>
               ))}
             </div>
           ) : null}
@@ -264,10 +266,10 @@ function IndustryTab({
           {section.cards?.length ? (
             <div className="content-grid medicine-cards-grid">
               {section.cards.map(([title, value]) => (
-                <article key={title} className="summary-card">
+                <SummaryCard key={title}>
                   <p className="insight-title">{title}</p>
                   <p className="body-text">{value}</p>
-                </article>
+                </SummaryCard>
               ))}
             </div>
           ) : null}
@@ -275,10 +277,10 @@ function IndustryTab({
           {section.table && !shouldRenderTableFirst(section.title) ? <DataTable table={section.table} /> : null}
 
           {section.arppuCard ? (
-            <article className="summary-card medicine-arppu-card">
-              <p className="medicine-problem-card-title">{section.arppuCard.title}</p>
-              <p className="body-text medicine-problem-card-text">{section.arppuCard.text}</p>
-            </article>
+            <SummaryCard className="medicine-arppu-card">
+              <p className="insight-title">{section.arppuCard.title}</p>
+              <p className="body-text">{section.arppuCard.text}</p>
+            </SummaryCard>
           ) : null}
 
           {section.productHypothesesTitle ? (
@@ -288,10 +290,10 @@ function IndustryTab({
           {section.productHypothesesTable ? <DataTable table={section.productHypothesesTable} /> : null}
 
           {section.solutionFit ? (
-            <article className="summary-card medicine-summary-card">
-              <p className="medicine-problem-card-title">{section.solutionFit.title}</p>
-              <p className="body-text medicine-summary-card-text">{section.solutionFit.text}</p>
-            </article>
+            <SummaryCard className="medicine-summary-card">
+              <p className="insight-title">{section.solutionFit.title}</p>
+              <p className="body-text">{section.solutionFit.text}</p>
+            </SummaryCard>
           ) : null}
 
           {section.marketEntryTitle ? <div className="medicine-divider" /> : null}
@@ -301,10 +303,10 @@ function IndustryTab({
           {section.marketEntryTable ? <DataTable table={section.marketEntryTable} /> : null}
 
           {section.marketPotential ? (
-            <article className="summary-card medicine-summary-card">
-              <p className="medicine-problem-card-title">{section.marketPotential.title}</p>
-              <p className="body-text medicine-summary-card-text">{section.marketPotential.text}</p>
-            </article>
+            <SummaryCard className="medicine-summary-card">
+              <p className="insight-title">{section.marketPotential.title}</p>
+              <p className="body-text">{section.marketPotential.text}</p>
+            </SummaryCard>
           ) : null}
 
           {section.audienceDetails ? (
@@ -312,20 +314,20 @@ function IndustryTab({
               <div className="medicine-divider" />
               <div className="medicine-audience-detail-grid">
                 {section.audienceDetails.map(([title, value]) => (
-                  <article key={title} className="summary-card medicine-audience-detail-card">
-                    <p className="insight-title medicine-audience-detail-label">{title}</p>
-                    <p className="body-text medicine-audience-detail-text">{value}</p>
-                  </article>
+                  <SummaryCard key={title} className="medicine-audience-detail-card">
+                    <p className="insight-title">{title}</p>
+                    <p className="body-text">{value}</p>
+                  </SummaryCard>
                 ))}
               </div>
             </>
           ) : null}
 
           {section.logic ? (
-            <article className="summary-card medicine-logic-card">
-              <p className="insight-title medicine-logic-label">Логика</p>
-              <p className="body-text medicine-logic-text">{section.logic}</p>
-            </article>
+            <SummaryCard className="medicine-logic-card">
+              <p className="insight-title">Логика</p>
+              <p className="body-text">{section.logic}</p>
+            </SummaryCard>
           ) : null}
 
           {section.lists?.length ? (
@@ -337,7 +339,7 @@ function IndustryTab({
           ) : null}
         </section>
       ))}
-    </>
+    </div>
   )
 }
 

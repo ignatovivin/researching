@@ -416,6 +416,7 @@
   display: grid;
   grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
   gap: 8px;
+  align-items: start;
 }
 
 .panel {
@@ -450,10 +451,13 @@
 }
 
 .summary-card {
+  display: grid;
+  gap: 4px;
+  align-content: start;
   background: rgba(124, 138, 158, 0.03);
   border: 1px solid rgba(124, 138, 158, 0.15);
   border-radius: var(--radius-md);
-  padding: 24px;
+  padding: 20px;
 }
 
 .note-list {
@@ -953,24 +957,6 @@ th:first-child {
   font-weight: 400;
 }
 
-.medicine-logic-card {
-  display: grid;
-  gap: 4px;
-  border-radius: 16px;
-}
-
-.medicine-logic-label {
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 400;
-}
-
-.medicine-logic-text {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 300;
-}
-
 .medicine-audience-panel {
   gap: 24px;
 }
@@ -1019,26 +1005,6 @@ th:first-child {
   background: var(--border-muted);
 }
 
-.medicine-audience-detail-card {
-  display: grid;
-  gap: 4px;
-  min-height: 144px;
-  padding: 24px;
-  border-radius: 16px;
-}
-
-.medicine-audience-detail-label {
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 400;
-}
-
-.medicine-audience-detail-text {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 300;
-}
-
 .medicine-problem-panel {
   gap: 24px;
 }
@@ -1073,25 +1039,9 @@ th:first-child {
   width: 100%;
 }
 
-.medicine-problem-card {
+.industry-tab {
   display: grid;
-  gap: 12px;
-  padding: 24px;
-  border-radius: 16px;
-}
-
-.medicine-problem-card-title {
-  margin: 0;
-  font-size: 20px;
-  line-height: 26px;
-  font-weight: 500;
-  color: var(--fg-default);
-}
-
-.medicine-problem-card-text {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 300;
+  gap: 8px;
 }
 
 .medicine-value-panel {
@@ -1128,25 +1078,8 @@ th:first-child {
   width: 183px;
 }
 
-.medicine-value-card {
-  display: grid;
-  gap: 12px;
-  border-radius: 16px;
-}
-
 .medicine-strategic-panel {
   gap: 16px;
-}
-
-.medicine-strategic-card {
-  display: grid;
-  gap: 12px;
-  border-radius: 16px;
-  padding: 24px;
-}
-
-.medicine-strategic-list {
-  gap: 0;
 }
 
 .medicine-strategic-list li {
@@ -1211,13 +1144,6 @@ th:first-child {
   width: 561px;
 }
 
-.medicine-arppu-card {
-  display: grid;
-  gap: 12px;
-  padding: 24px;
-  border-radius: 16px;
-}
-
 .medicine-summary-panel {
   gap: 24px;
 }
@@ -1244,19 +1170,6 @@ th:first-child {
 .medicine-summary-panel th:first-child,
 .medicine-summary-panel td:first-child {
   width: 51px;
-}
-
-.medicine-summary-card {
-  display: grid;
-  gap: 12px;
-  padding: 24px;
-  border-radius: 16px;
-}
-
-.medicine-summary-card-text {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 300;
 }
 
 .medicine-entry-panel {
@@ -1305,12 +1218,6 @@ th:first-child {
   text-transform: none;
 }
 
-.medicine-product-panel .summary-card {
-  padding: 0;
-  border: 0;
-  background: transparent;
-}
-
 .medicine-product-panel .body-text {
   font-size: 16px;
   line-height: 24px;
@@ -1319,11 +1226,13 @@ th:first-child {
 
 .medicine-cards-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
 }
 
 .medicine-overview-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
+  align-items: start;
 }
 
 .medicine-overview-card {
@@ -1653,10 +1562,6 @@ th:first-child {
   .medicine-market-title {
     font-size: 22px;
     line-height: 24px;
-  }
-
-  .medicine-audience-detail-card {
-    min-height: auto;
   }
 
   .panel,
